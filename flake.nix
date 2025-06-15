@@ -27,7 +27,8 @@
           nativeBuildInputs = [ pkgs.makeWrapper ];
           buildInputs = [ pkgs.appimage-run ];
 
-          src = pkgs.fetchurl {
+          src = ./.;
+          appFile = pkgs.fetchurl {
             url = "https://github.com/canoziia/fantascene-dynamic-wallpaper/releases/download/v2.0.3/fantascene-dynamic-wallpaper.AppImage";
             sha256 = "2e50ed1c387537e72864d90c56fbe6e51cdb655f855347a93bb9003136122eca";
           };
@@ -38,7 +39,8 @@
 
           installPhase = ''
             mkdir -p $out/bin
-            install -m 755 $src $out/bin/${appImageName}
+            install -m 755 $appFile $out/bin/${appImageName}
+            cp $src/fantascene-dynamic-wallpaper.desktop $out/share/applications/
             makeWrapper ${pkgs.appimage-run}/bin/appimage-run $out/bin/fantascene-dynamic-wallpaper \
               --add-flags "$out/bin/${appImageName}"
           '';

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Comment=Starts the dynamic wallpaper service
+Exec=fantascene-dynamic-wallpaper
+Name=Fantascene Dynamic Wallpaper
+Terminal=false
+Type=Application
+Version=1.4
