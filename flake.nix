@@ -38,7 +38,7 @@
           dontStrip = true;
 
           installPhase = ''
-            mkdir -p $out/bin
+            mkdir -p $out/bin $out/share/applications
             install -m 755 $appFile $out/bin/${appImageName}
             cp $src/fantascene-dynamic-wallpaper.desktop $out/share/applications/
             makeWrapper ${pkgs.appimage-run}/bin/appimage-run $out/bin/fantascene-dynamic-wallpaper \
