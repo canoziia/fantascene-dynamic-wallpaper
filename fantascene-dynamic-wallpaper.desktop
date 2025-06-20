@@ -1,6 +1,6 @@
 [Desktop Entry]
 Comment=Starts the dynamic wallpaper service
-Exec=fantascene-dynamic-wallpaper
+Exec=sh -c "sleep 5 && fantascene-dynamic-wallpaper"
 Name=Fantascene Dynamic Wallpaper
 Terminal=false
 Type=Application
